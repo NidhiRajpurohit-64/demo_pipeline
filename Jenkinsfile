@@ -5,7 +5,7 @@ pipeline {
         choice(
             name: 'ENVIRONMENT',
             choices: ['staging', 'production'],
-            description: 'Target Environment'
+            description: 'Target'
         )
     }
 
@@ -31,6 +31,7 @@ pipeline {
                         sh 'echo Integration tests'
                     }
                 }
+
             }
         }
 
@@ -50,5 +51,6 @@ pipeline {
                 sh "echo Deploying to ${params.ENVIRONMENT}"
             }
         }
+
     }
 }
